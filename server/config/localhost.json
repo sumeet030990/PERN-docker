@@ -1,0 +1,10 @@
+{
+  "APP_URL": "http://localhost:9000",
+  "FE_URL": "http://localhost:3000",
+  "PORT": 9000,
+  "APP_ENV": "Local Host",
+  "DB_HOST": "localhost",
+  "DB_NAME": "learn",
+  "DB_USER_NAME": "postgres",
+  "DB_PASSWORD": "ezest@2022"
+}

@@ -1,0 +1,42 @@
+version: '3.8'
+services:
+  web:
+    container_name: web
+    restart: always
+    build:
+      context: ./client
+      dockerfile: DockerFile
+    ports: 
+      - "3000:3000"
+    volumes:
+      - ./client:/client
+  db:
+    image: postgres:15rc2-alpine
+    container_name: postgres
+    restart: always
+    hostname: db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ezest2022
+      POSTGRES_DB: learn
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+      - ./server:/app
+    ports: 
+      - "5432:5432"
+  app:
+    container_name: api
+    restart: always
+    build: 
+      context: ./server
+      dockerfile: DockerFile
+    ports: 
+      - "9000:9000"
+    environment:
+      DATABASE_URL: postgresql://postgres:ezest2022@db/learn
+    depends_on:
+      - db
+    command: ./docker-entrypoint.sh
+volumes:
+  pgdata:
+ 

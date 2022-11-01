@@ -1,0 +1,16 @@
+FROM node:18-alpine3.15
+
+# make the 'client' folder the current working directory
+WORKDIR /client
+
+# copy both 'package.json' and 'package-lock.json'
+COPY package*.json /client/
+
+# install project depenendecies 
+RUN npm install
+
+#copy project files and folder to the current working directory 
+COPY . /client/
+
+EXPOSE 3000
+CMD ["npm", "start"]

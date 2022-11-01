@@ -1,0 +1,10 @@
+{
+  "APP_URL": "",
+  "FE_URL": "",
+  "PORT": 8080,
+  "APP_ENV": "Development",
+  "DB_HOST": "localhost",
+  "DB_NAME": null,
+  "DB_USER_NAME": null,
+  "DB_PASSWORD": null
+}

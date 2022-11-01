@@ -1,0 +1,9 @@
+{
+  "APP_ENV": "stage",
+  "APP_URL": "",
+  "FE_URL": "",
+  "DB_HOST": "localhost",
+  "DB_NAME": null,
+  "DB_USER_NAME": null,
+  "DB_PASSWORD": null
+}
